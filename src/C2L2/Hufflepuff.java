@@ -2,22 +2,17 @@ package C2L2;
 
 public class Hufflepuff extends Hogwarts {
     private static final String houseName = "Hufflepuff";
-    private int bravery,
-            honor,
-            chivalry;
+    private int hardWork,
+            patience,
+            justice,
+            loyalty;
 
-    public Hufflepuff(int bravery, int honor, int chivalry) {
-        super("", "", 0, 0);
-        this.bravery = bravery;
-        this.honor = honor;
-        this.chivalry = chivalry;
-    }
-
-    public Hufflepuff(Hogwarts hogwarts, int bravery, int honor, int chivalry) {
+        public Hufflepuff(Hogwarts hogwarts, int hardWork, int patience, int justice, int loyalty) {
         super(hogwarts.getName(), hogwarts.getLastName(), hogwarts.getMagicPower(), hogwarts.getTransgressionRange());
-        this.bravery = bravery;
-        this.honor = honor;
-        this.chivalry = chivalry;
+        this.hardWork = hardWork;
+        this.patience = patience;
+        this.justice = justice;
+        this.loyalty = loyalty ;
     }
 
     public void setCommon(Hogwarts hogwarts) {
@@ -27,36 +22,37 @@ public class Hufflepuff extends Hogwarts {
         setTransgressionRange(hogwarts.getTransgressionRange());
     }
 
-    public int getBravery() {
-        return bravery;
+    public int gethardWork() {
+        return hardWork;
     }
 
-    public void setBravery(int bravery) {
-        this.bravery = bravery;
+    public void sethardWork(int hardWork) {
+        this.hardWork = hardWork;
     }
 
-    public int getHonor() {
-        return honor;
+    public int getpatience() {
+        return patience;
     }
 
-    public void setHonor(int honor) {
-        this.honor = honor;
+    public void setpatience(int patience) {
+        this.patience = patience;
     }
 
-    public int getChivalry() {
-        return chivalry;
+    public int getjustice() {
+        return justice;
     }
 
-    public void setChivalry(int chivalry) {
-        this.chivalry = chivalry;
+    public void setjustice(int justice) {
+        this.justice = justice;
     }
 
     @Override
     public String toString() {
         return "Hufflepuff{" + super.toString() +
-                "bravery=" + bravery +
-                ", honor=" + honor +
-                ", chivalry=" + chivalry +
+                "hardWork=" + hardWork +
+                ", patience=" + patience +
+                ", justice=" + justice +
+                ", loyalty=" + loyalty +
                 '}';
     }
 
