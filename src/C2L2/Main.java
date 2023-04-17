@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Course 2 Lesson 2\nOOP, part1: Encapsulation and Inheritance");
 
-        Random r = new Random() ;
+        Random r = new Random();
 
         Hogwarts hogwarts = new Hogwarts("Harry", "Potter", 50, 50);
         System.out.println(hogwarts.getSchoolName());
@@ -21,19 +21,19 @@ public class Main {
         Gryffindor hermioneGranger = new Gryffindor(hogwarts, 76, 76, 76);
         System.out.println("hermioneGranger = " + hermioneGranger);
 
-        hogwarts = new Hogwarts("Ron", "Weasley", 40, 40) ;
-        Gryffindor ronWeasley = new Gryffindor(hogwarts, 70,70,70) ;
+        hogwarts = new Hogwarts("Ron", "Weasley", 40, 40);
+        Gryffindor ronWeasley = new Gryffindor(hogwarts, 70, 70, 70);
         System.out.println("ronWeasley = " + ronWeasley);
 
         // На факультет Пуффендуй учатся Захария Смит, Седрик Диггори, Джастин Финч-Флетчли.
 
-        hogwarts = new Hogwarts( "Zacharias", "Smith", 45, 45);
-        Hufflepuff zachariasSmith = new Hufflepuff(hogwarts, r.nextInt(40,80),r.nextInt(40, 80),50,50) ;
+        hogwarts = new Hogwarts("Zacharias", "Smith", 45, 45);
+        Hufflepuff zachariasSmith = new Hufflepuff(hogwarts, r.nextInt(40, 80), r.nextInt(40, 80), 50, 50);
         System.out.println("zachariasSmith = " + zachariasSmith);
 
 
         hogwarts = new Hogwarts("Cedric", "Diggory", r.nextInt(10, 90), r.nextInt(10, 90));
-        Hufflepuff cedricDiggory = new Hufflepuff(hogwarts,r.nextInt(99),r.nextInt(99),r.nextInt(99),r.nextInt(99));
+        Hufflepuff cedricDiggory = new Hufflepuff(hogwarts, r.nextInt(99), r.nextInt(99), r.nextInt(99), r.nextInt(99));
         System.out.println("cedricDiggory = " + cedricDiggory);
 
     }

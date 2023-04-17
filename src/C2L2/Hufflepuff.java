@@ -2,17 +2,17 @@ package C2L2;
 
 public class Hufflepuff extends Hogwarts {
     private static final String houseName = "Hufflepuff";
-    private int hardWork,
-            patience,
-            justice,
-            loyalty;
+    private int hardWork;
+    private int patience;
+    private int justice;
+    private final int loyalty;
 
-        public Hufflepuff(Hogwarts hogwarts, int hardWork, int patience, int justice, int loyalty) {
+    public Hufflepuff(Hogwarts hogwarts, int hardWork, int patience, int justice, int loyalty) {
         super(hogwarts.getName(), hogwarts.getLastName(), hogwarts.getMagicPower(), hogwarts.getTransgressionRange());
         this.hardWork = hardWork;
         this.patience = patience;
         this.justice = justice;
-        this.loyalty = loyalty ;
+        this.loyalty = loyalty;
     }
 
     public void setCommon(Hogwarts hogwarts) {
