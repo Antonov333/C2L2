@@ -2,6 +2,25 @@ package C2L2;
 
 public class Hogwarts {
 
+    public static void compareHogwartians(Hogwarts h1, Hogwarts h2) {
+        int r1 = h1.rateAsHogwartian();
+        int r2 = h2.rateAsHogwartian();
+
+        if (r1 == r2) {
+            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is same as "
+                    + h2.getFullName() + " with " + r2 + " points");
+            return;
+        }
+        if (r1 > r2) {
+            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is better than "
+                    + h2.getFullName() + " with " + r2 + " points");
+        } else {
+            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is worse than "
+                    + h2.getFullName() + " with " + r2 + " points");
+        }
+
+    }
+
     private final static String schoolName = "Hogwarts School of Witchcraft and Wizardry";
     private String name;
     private String lastName;
@@ -60,4 +79,13 @@ public class Hogwarts {
                 ", transgressionRange=" + transgressionRange +
                 '}';
     }
+
+    public int rateAsHogwartian() {
+        return magicPower + transgressionRange;
+    }
+
+    public String getFullName() {
+        return name + " " + lastName;
+    }
+
 }

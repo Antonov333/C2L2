@@ -59,4 +59,13 @@ public class Hufflepuff extends Hogwarts {
     public String getHouseName() {
         return houseName;
     }
+
+    public int rateAsHufflePuff() {
+        return hardWork + patience + justice + loyalty;
+    }
+
+    public double rateOverall() {
+        return (double) rateAsHufflePuff() / 4.0 + (double) (super.rateAsHogwartian());
+    }
+
 }
