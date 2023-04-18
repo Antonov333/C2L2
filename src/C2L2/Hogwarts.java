@@ -72,12 +72,9 @@ public class Hogwarts {
 
     @Override
     public String toString() {
-        return "Hogwarts{" +
-                "name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", magicPower=" + magicPower +
-                ", transgressionRange=" + transgressionRange +
-                '}';
+        return schoolName + " student " + getFullName() + " is capable of magic power of " + magicPower +
+                " and transgression range of " + transgressionRange +
+                " points";
     }
 
     public int rateAsHogwartian() {
@@ -88,4 +85,13 @@ public class Hogwarts {
         return name + " " + lastName;
     }
 
+    public double rateOverall() {
+        return (double) rateAsHogwartian();
+    }
+
+    public void compareOverall(Hogwarts h) {
+        double r1 = rateOverall();
+        double r2 = h.rateOverall();
+
+    }
 }

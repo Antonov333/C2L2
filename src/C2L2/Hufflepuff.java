@@ -5,7 +5,7 @@ public class Hufflepuff extends Hogwarts {
     private int hardWork;
     private int patience;
     private int justice;
-    private final int loyalty;
+    private int loyalty;
 
     public Hufflepuff(Hogwarts hogwarts, int hardWork, int patience, int justice, int loyalty) {
         super(hogwarts.getName(), hogwarts.getLastName(), hogwarts.getMagicPower(), hogwarts.getTransgressionRange());
@@ -48,12 +48,9 @@ public class Hufflepuff extends Hogwarts {
 
     @Override
     public String toString() {
-        return "Hufflepuff{" + super.toString() +
-                "hardWork=" + hardWork +
-                ", patience=" + patience +
-                ", justice=" + justice +
-                ", loyalty=" + loyalty +
-                '}';
+        return "\n" + super.toString() +
+                "\nAs a member of " + houseName + " house capable of hard work of " + hardWork + " points, patience of "
+                + patience + " points, justice of " + justice + " points, and loyalty of " + loyalty + " points";
     }
 
     public String getHouseName() {
@@ -67,5 +64,33 @@ public class Hufflepuff extends Hogwarts {
     public double rateOverall() {
         return (double) rateAsHufflePuff() / 4.0 + (double) (super.rateAsHogwartian());
     }
+
+    public void printAbout() {
+        System.out.println(this);
+    }
+
+    public int rateAsHufflepuffian() {
+        return super.rateAsHogwartian() + hardWork + patience + justice + loyalty;
+    }
+
+    public void compareWith(Hufflepuff hufflepuff) {
+        int r1 = rateAsHufflepuffian();
+        int r2 = hufflepuff.rateAsHufflepuffian();
+        if (r1 == r2) {
+            System.out.println(getFullName() + " with " + r1 + " points as hufflepuffian is same as "
+                    + hufflepuff.getFullName() + " with " + r2 + " points");
+            return;
+        }
+        if (r1 > r2) {
+            System.out.println(getFullName() + " with " + r1 + " points as hufflepuffian is better than "
+                    + hufflepuff.getFullName() + " with " + r2 + " points");
+        } else {
+            System.out.println(getFullName() + " with " + r1 + " points as hufflepuffian is worse than "
+                    + hufflepuff.getFullName() + " with " + r2 + " points");
+        }
+
+    }
+
+//    public compareHufflepuffians(Hufflepuff h1, Hufflepuff h2) {
 
 }

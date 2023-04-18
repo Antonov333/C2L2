@@ -88,11 +88,10 @@ public class Gryffindor extends Hogwarts {
     }
 
     public double rateOverall() {
-        return (double) rateAsGryffindorian() / 3.0 + (double) (super.getMagicPower() + super.getTransgressionRange());
+        return (double) rateAsGryffindorian() / 3.0 + super.rateOverall();
     }
 
     public void compareWith(Gryffindor gryffindor) {
-
         int r1 = rateAsGryffindorian();
         int r2 = gryffindor.rateAsGryffindorian();
         if (r1 == r2) {
@@ -111,8 +110,12 @@ public class Gryffindor extends Hogwarts {
     }
 
     public void printAbout() {
-        System.out.println(getFullName() + " is a student of " + getHouseName() + " house in " + getSchoolName());
-        System.out.println("Capable of " + super.getMagicPower() + "points of magic power");
+        System.out.println("\n" + getFullName() + " is a student of " + getHouseName() + " house in " + getSchoolName());
+        System.out.print("Capable of " + getMagicPower() + " points of magic power and " + getTransgressionRange()
+                + " transgression range, ");
+        System.out.println("and also of " + bravery + " points of bravery, " + honor + " points of honor, and " +
+                chivalry + " points of chivalry");
+
     }
 }
 

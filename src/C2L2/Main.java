@@ -8,7 +8,7 @@ public class Main {
 
         Random r = new Random();
 
-        Hogwarts hogwarts = new Hogwarts("Harry", "Potter", 50, 50);
+        Hogwarts hogwarts = new Hogwarts("Harry", "Potter", r.nextInt(100), r.nextInt(100));
         System.out.println(hogwarts.getSchoolName());
         Gryffindor harryPotter = new Gryffindor(r.nextInt(99), r.nextInt(99), r.nextInt(99));
         harryPotter.setCommon(hogwarts);
@@ -49,9 +49,14 @@ public class Main {
 
         harryPotter.compareWith(hermioneGranger);
 
-        hermioneGranger.printAbout();
-
         Hogwarts.compareHogwartians(harryPotter, cedricDiggory);
+        harryPotter.printAbout();
+        cedricDiggory.printAbout();
 
+
+        /** Ravenclaw
+         * Чжоу Чанг, Падма Патил и Маркус Белби
+         *
+         * */
     }
 }
