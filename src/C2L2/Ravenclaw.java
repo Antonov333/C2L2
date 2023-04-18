@@ -57,7 +57,7 @@ public class Ravenclaw extends Hogwarts {
     public String toString() {
         return super.toString() + "\nAs a member of " + houseName + " house capable with intelligence of " + intelligence +
                 " points, creativeness of " + creativeness +
-                "points, wisdom of " + wisdom + " points,  and wit of " + wit +
+                " points, wisdom of " + wisdom + " points,  and wit of " + wit +
                 " points";
     }
 
@@ -91,5 +91,23 @@ public class Ravenclaw extends Hogwarts {
         return (double) (rateAsHogwartian()) + (double) (rateAsRavenclawian() / 4.0);
     }
 
+    public void compareOverall(Hogwarts h) {
+        double r1 = rateOverall();
+        double r2 = h.rateOverall();
 
+        System.out.print(getFullName() + " of " + r1 + " rating ");
+
+        if (java.lang.Math.abs(r1 - r2) < 0.1) {
+            System.out.println(" is almost same level as " + h.getFullName());
+            return;
+        }
+
+        if (r1 > r2) {
+            System.out.println("is better than " + h.getFullName() + " with " + r2 + " rating in " + getSchoolName());
+        } else {
+
+        }
+
+
+    }
 }
