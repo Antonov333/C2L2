@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Course 2 Lesson 2\nOOP, part1: Encapsulation and Inheritance");
+        System.out.println("Course 2 Lesson 2\nOOP, part1: Encapsulation and Inheritance" +
+                "\n-----------------------------------------\n");
 
         Random r = new Random();
-
 
         Gryffindor harryPotter = new Gryffindor("Harry", "Potter", r.nextInt(100), r.nextInt(100),
                 r.nextInt(100), r.nextInt(100), r.nextInt(100));
@@ -15,9 +15,11 @@ public class Main {
 
         Gryffindor hermioneGranger = new Gryffindor("Hermione", "Granger", r.nextInt(100), r.nextInt(100),
                 r.nextInt(100), r.nextInt(100), r.nextInt(100));
+        hermioneGranger.printAbout();
 
         Gryffindor ronWeasley = new Gryffindor("Ron", "Weasley", r.nextInt(100), r.nextInt(100),
                 r.nextInt(100), r.nextInt(100), r.nextInt(100));
+        ronWeasley.printAbout();
 
         Hufflepuff zachariasSmith = new Hufflepuff("Zacharia", "Smith", r.nextInt(99), r.nextInt(99), r.nextInt(99),
                 r.nextInt(99), r.nextInt(100), r.nextInt(100));
@@ -26,22 +28,13 @@ public class Main {
         Hufflepuff cedricDiggory = new Hufflepuff("Cedric", "Diggory", r.nextInt(99), r.nextInt(99), r.nextInt(99),
                 r.nextInt(99), r.nextInt(100), r.nextInt(100));
 
-        Hufflepuff justinFinchFletchley = new Hufflepuff("Cedric", "Diggory", r.nextInt(99), r.nextInt(99), r.nextInt(99),
+        Hufflepuff justinFinchFletchley = new Hufflepuff("Justin", "Finch-Fletchley", r.nextInt(99), r.nextInt(99), r.nextInt(99),
                 r.nextInt(99), r.nextInt(100), r.nextInt(100));
         cedricDiggory.printAbout();
 
-        System.out.println("hermioneGranger.rateAsGryffindorian() = " + hermioneGranger.rateAsGryffindorian());
-        System.out.println("hermioneGranger.rateOverall() = " + hermioneGranger.rateOverall() + "\n");
-        System.out.println("harryPotter.rateOverall() = " + harryPotter.rateOverall() + "\n");
-
-        System.out.println("cedricDiggory.rateOverall() = " + cedricDiggory.rateOverall() + "\n");
-
-        Gryffindor.compareGryffindorians(harryPotter, hermioneGranger);
-        Gryffindor.compareGryffindorians(ronWeasley, harryPotter);
-
         harryPotter.compareWith(hermioneGranger);
 
-        Hogwarts.compareHogwartians(harryPotter, cedricDiggory);
+        harryPotter.compare(cedricDiggory);
         harryPotter.printAbout();
         cedricDiggory.printAbout();
 
@@ -56,12 +49,38 @@ public class Main {
         padmaPatil.printAbout();
         marcusBelby.printAbout();
 
+        padmaPatil.compareWith(choChang);
+
         zachariasSmith.compareWith(cedricDiggory);
 
-        /**
-         * Slytherin
-         * Драко Малфой, Грэхэм Монтегю, Грегори Гойл
-         *
-         * */
+        zachariasSmith.compareOverall(hermioneGranger);
+
+        choChang.compareOverall(cedricDiggory);
+
+        Slytherin dracoMalfoy = new Slytherin("Draco", "Malfoy", r.nextInt(99), r.nextInt(99),
+                r.nextInt(99), r.nextInt(99), r.nextInt(99), r.nextInt(99));
+        dracoMalfoy.printAbout();
+
+        Slytherin grahamMontague = new Slytherin("Graham", "Montague", r.nextInt(99), r.nextInt(99),
+                r.nextInt(99), r.nextInt(99), r.nextInt(99), r.nextInt(99));
+        grahamMontague.printAbout();
+
+        Slytherin gregoryGoyle = new Slytherin("Gregory", "Goyle", r.nextInt(99), r.nextInt(99),
+                r.nextInt(99), r.nextInt(99), r.nextInt(99), r.nextInt(99));
+        gregoryGoyle.printAbout();
+
+        Hogwarts.compareHogwartians(dracoMalfoy, harryPotter);
+        harryPotter.compare(dracoMalfoy);
+
+        dracoMalfoy.compareOverall(harryPotter);
+        dracoMalfoy.compareWith(grahamMontague);
+
+        gregoryGoyle.compareWith(grahamMontague);
+
+        justinFinchFletchley.compareOverall(marcusBelby);
+
+        padmaPatil.printAbout();
+        padmaPatil.printOverallRating();
     }
+
 }

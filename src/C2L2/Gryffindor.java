@@ -6,14 +6,6 @@ public class Gryffindor extends Hogwarts {
             honor,
             chivalry;
 
-    /**
-     * public Gryffindor(int bravery, int honor, int chivalry) {
-     * super("", "", 0, 0);
-     * this.bravery = bravery;
-     * this.honor = honor;
-     * this.chivalry = chivalry;
-     * }
-     */
 
     public Gryffindor(String name, String lastName, int magicPower, int transgressionRange, int bravery, int honor, int chivalry) {
         super(name, lastName, magicPower, transgressionRange);
@@ -38,13 +30,6 @@ public class Gryffindor extends Hogwarts {
                     + g2.getFullName() + " with " + r2 + " points");
         }
 
-    }
-
-    public Gryffindor(Hogwarts hogwarts, int bravery, int honor, int chivalry) {
-        super(hogwarts.getName(), hogwarts.getLastName(), hogwarts.getMagicPower(), hogwarts.getTransgressionRange());
-        this.bravery = bravery;
-        this.honor = honor;
-        this.chivalry = chivalry;
     }
 
     public void setCommon(Hogwarts hogwarts) {
@@ -80,10 +65,9 @@ public class Gryffindor extends Hogwarts {
 
     @Override
     public String toString() {
-        return houseName + " house of " + getSchoolName() + "\n" + getFullName() + " is capable of magic power of " + getMagicPower() +
-                " and transgression range of " + getTransgressionRange() +
-                " points\nbravery of " + bravery + " points, honor of " + honor +
-                " points and chivalry of " + chivalry + " points";
+        return super.toString() +
+                "\nAs a member of " + houseName + " house capable of bravery of " + bravery + " points, honor of "
+                + honor + " points, chivalry of " + chivalry + " points\n";
     }
 
     public String getHouseName() {
@@ -116,13 +100,17 @@ public class Gryffindor extends Hogwarts {
 
     }
 
-    public void printAbout() {
+    public void printAboutDraft() {
         System.out.println("\n" + getFullName() + " is a student of " + getHouseName() + " house in " + getSchoolName());
         System.out.print("Capable of " + getMagicPower() + " points of magic power and " + getTransgressionRange()
                 + " transgression range, ");
         System.out.println("and also of " + bravery + " points of bravery, " + honor + " points of honor, and " +
                 chivalry + " points of chivalry\n");
 
+    }
+
+    public void printAbout() {
+        System.out.println(this);
     }
 }
 

@@ -58,7 +58,7 @@ public class Ravenclaw extends Hogwarts {
         return super.toString() + "\nAs a member of " + houseName + " house capable with intelligence of " + intelligence +
                 " points, creativeness of " + creativeness +
                 " points, wisdom of " + wisdom + " points,  and wit of " + wit +
-                " points";
+                " points\n";
     }
 
     public void printAbout() {
@@ -72,42 +72,21 @@ public class Ravenclaw extends Hogwarts {
     public void compareWith(Ravenclaw ravenclaw) {
         int r1 = rateAsRavenclawian();
         int r2 = ravenclaw.rateAsRavenclawian();
+        System.out.print(getFullName() + " with " + r1 + " points as Ravenclawian is ");
         if (r1 == r2) {
-            System.out.println(getFullName() + " with " + r1 + " points as Ravenclawian is same as "
-                    + ravenclaw.getFullName() + " with " + r2 + " points");
-            return;
+            System.out.print("same as ");
         }
         if (r1 > r2) {
-            System.out.println(getFullName() + " with " + r1 + " points as Ravenclawian is better than "
-                    + ravenclaw.getFullName() + " with " + r2 + " points");
-        } else {
-            System.out.println(getFullName() + " with " + r1 + " points as Ravenclawian is worse than "
-                    + ravenclaw.getFullName() + " with " + r2 + " points");
+            System.out.print("better than ");
         }
-
+        if (r1 < r2) {
+            System.out.print("worse than ");
+        }
+        System.out.println(ravenclaw.getFullName() + " with " + r2 + " points");
     }
 
     public double rateOverall() {
-        return (double) (rateAsHogwartian()) + (double) (rateAsRavenclawian() / 4.0);
+        return (double) (rateAsHogwartian()) + (rateAsRavenclawian() / 4.0);
     }
 
-    public void compareOverall(Hogwarts h) {
-        double r1 = rateOverall();
-        double r2 = h.rateOverall();
-
-        System.out.print(getFullName() + " of " + r1 + " rating ");
-
-        if (java.lang.Math.abs(r1 - r2) < 0.1) {
-            System.out.println(" is almost same level as " + h.getFullName());
-            return;
-        }
-
-        if (r1 > r2) {
-            System.out.println("is better than " + h.getFullName() + " with " + r2 + " rating in " + getSchoolName());
-        } else {
-
-        }
-
-
-    }
 }

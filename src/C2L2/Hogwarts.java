@@ -86,12 +86,45 @@ public class Hogwarts {
     }
 
     public double rateOverall() {
-        return (double) rateAsHogwartian();
+        return rateAsHogwartian();
+    }
+
+    public void compare(Hogwarts h) {
+        int r1 = rateAsHogwartian();
+        int r2 = h.rateAsHogwartian();
+        System.out.print(getFullName() + " with " + r1 + " points as Hogwartian is ");
+        if (r1 == r2) {
+            System.out.print("same as ");
+        }
+        if (r1 > r2) {
+            System.out.print("better than ");
+        }
+        if (r1 < r2) {
+            System.out.print("worse than ");
+        }
+        System.out.println(h.getFullName() + " with " + r2 + " points\n");
+
     }
 
     public void compareOverall(Hogwarts h) {
         double r1 = rateOverall();
         double r2 = h.rateOverall();
+        System.out.print(getFullName() + " with " + r1 + " overall rating is ");
+        if (java.lang.Math.abs(r1 - r2) < 0.1) {
 
+            System.out.print("almost same as ");
+        }
+        if (r1 > r2) {
+            System.out.print("better than ");
+        }
+        if (r1 < r2) {
+            System.out.print("worse than ");
+        }
+        System.out.println(h.getFullName() + " with " + r2 + " rating\n");
+
+    }
+
+    public void printOverallRating() {
+        System.out.println(getFullName() + "'s overall rating is " + rateOverall());
     }
 }

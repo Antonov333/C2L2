@@ -5,7 +5,7 @@ public class Hufflepuff extends Hogwarts {
     private int hardWork;
     private int patience;
     private int justice;
-    private int loyalty;
+    private final int loyalty;
 
     public Hufflepuff(String name, String lastName, int magicPower, int transgressionRange, int hardWork, int patience, int justice, int loyalty) {
         super(name, lastName, magicPower, transgressionRange);
@@ -48,9 +48,9 @@ public class Hufflepuff extends Hogwarts {
 
     @Override
     public String toString() {
-        return "\n" + super.toString() +
+        return super.toString() +
                 "\nAs a member of " + houseName + " house capable of hard work of " + hardWork + " points, patience of "
-                + patience + " points, justice of " + justice + " points, and loyalty of " + loyalty + " points";
+                + patience + " points, justice of " + justice + " points, and loyalty of " + loyalty + " points\n";
     }
 
     public String getHouseName() {
@@ -76,20 +76,18 @@ public class Hufflepuff extends Hogwarts {
     public void compareWith(Hufflepuff hufflepuff) {
         int r1 = rateAsHufflepuffian();
         int r2 = hufflepuff.rateAsHufflepuffian();
-        System.out.println(getFullName() + " with " + r1 + " points as Hufflepuffian is ");
+        System.out.print(getFullName() + " with " + r1 + " points as Hufflepuffian is ");
         if (r1 == r2) {
             System.out.print("same as ");
         }
         if (r1 > r2) {
-            System.out.println("better than ");
+            System.out.print("better than ");
         }
         if (r1 < r2) {
-            System.out.println("worse than ");
+            System.out.print("worse than ");
         }
-        System.out.println(hufflepuff.getFullName() + " with " + r2 + " points");
+        System.out.println(hufflepuff.getFullName() + " with " + r2 + " points\n");
 
     }
-
-//    public compareHufflepuffians(Hufflepuff h1, Hufflepuff h2) {
 
 }
