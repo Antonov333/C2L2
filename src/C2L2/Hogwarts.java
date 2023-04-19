@@ -5,20 +5,17 @@ public class Hogwarts {
     public static void compareHogwartians(Hogwarts h1, Hogwarts h2) {
         int r1 = h1.rateAsHogwartian();
         int r2 = h2.rateAsHogwartian();
-
+        System.out.print(h1.getFullName() + " with " + r1 + " points as Hogwartian is ");
         if (r1 == r2) {
-            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is same as "
-                    + h2.getFullName() + " with " + r2 + " points");
-            return;
+            System.out.print("same as ");
         }
         if (r1 > r2) {
-            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is better than "
-                    + h2.getFullName() + " with " + r2 + " points");
-        } else {
-            System.out.println(h1.getFullName() + " with " + r1 + " points as Hogwartian is worse than "
-                    + h2.getFullName() + " with " + r2 + " points");
+            System.out.print("better than ");
         }
-
+        if (r1 < r2) {
+            System.out.print("is worse than ");
+        }
+        System.out.println(h2.getFullName() + " with " + r2 + " points\n");
     }
 
     private final static String schoolName = "Hogwarts School of Witchcraft and Wizardry";

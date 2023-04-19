@@ -85,28 +85,17 @@ public class Gryffindor extends Hogwarts {
     public void compareWith(Gryffindor gryffindor) {
         int r1 = rateAsGryffindorian();
         int r2 = gryffindor.rateAsGryffindorian();
+        System.out.print(getFullName() + " with " + r1 + " points as Gryffindorian is");
         if (r1 == r2) {
-            System.out.println(getFullName() + " with " + r1 + " points as Gryffindorian is same as "
-                    + gryffindor.getFullName() + " with " + r2 + " points");
-            return;
+            System.out.print(" same as ");
         }
         if (r1 > r2) {
-            System.out.println(getFullName() + " with " + r1 + " points as Gryffindorian is better than "
-                    + gryffindor.getFullName() + " with " + r2 + " points");
-        } else {
-            System.out.println(getFullName() + " with " + r1 + " points as Gryffindorian is worse than "
-                    + gryffindor.getFullName() + " with " + r2 + " points");
+            System.out.print(" better than ");
         }
-
-    }
-
-    public void printAboutDraft() {
-        System.out.println("\n" + getFullName() + " is a student of " + getHouseName() + " house in " + getSchoolName());
-        System.out.print("Capable of " + getMagicPower() + " points of magic power and " + getTransgressionRange()
-                + " transgression range, ");
-        System.out.println("and also of " + bravery + " points of bravery, " + honor + " points of honor, and " +
-                chivalry + " points of chivalry\n");
-
+        if (r1 < r2) {
+            System.out.print(" worse than ");
+        }
+        System.out.println(gryffindor.getFullName() + " with " + r2 + " points\n");
     }
 
     public void printAbout() {
