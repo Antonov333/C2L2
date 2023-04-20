@@ -69,7 +69,7 @@ public class Main {
                 r.nextInt(99), r.nextInt(99), r.nextInt(99), r.nextInt(99));
         gregoryGoyle.printAbout();
 
-        Hogwarts.compareHogwartians(dracoMalfoy, harryPotter);
+        Administration.compareHogwartians(dracoMalfoy, harryPotter);
         harryPotter.compare(dracoMalfoy);
 
         dracoMalfoy.compareOverall(harryPotter);
@@ -81,6 +81,8 @@ public class Main {
 
         padmaPatil.printAbout();
         padmaPatil.printOverallRating();
+
+        Administration.compareOverall(padmaPatil, zachariasSmith);
     }
 
 }
